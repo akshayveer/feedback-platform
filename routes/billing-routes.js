@@ -9,5 +9,9 @@ module.exports = app => {
       source: req.body.id, // obtained with Stripe.js
       description: 'Charge for emaily for adding credits'
     });
+
+    req.user.credits += 5;
+    const user = await req.user.save();
+    res.send(user);
   });
 };
