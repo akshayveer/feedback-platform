@@ -8,7 +8,6 @@ class Header extends Component {
     switch (this.props.auth) {
       case null:
         return;
-        break;
       case false:
         return (
           <li>
@@ -17,10 +16,10 @@ class Header extends Component {
         );
       default:
         return [
-          <li>
+          <li key="1">
             <Payments />
           </li>,
-          <li>
+          <li key="2">
             <a href="/api/logout">Logout</a>
           </li>
         ];
